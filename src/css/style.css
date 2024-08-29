@@ -1,0 +1,32 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+
+main {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+div {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 90px;
+  cursor: default;
+}
+
+#ampm {
+  margin-left: 30px;
+}
