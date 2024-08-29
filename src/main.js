@@ -11,8 +11,6 @@ const actualizarHora = () => {
   let segundo = fecha.getSeconds()
   let sufijo = "AM"
 
-  console.log(hora)
-
   if (hora >= 12) {
     sufijo = "PM"
   }
@@ -56,8 +54,12 @@ const elementos = [horas, minutos, segundos, ampm]
 
 elementos.forEach((elemento) => {
   elemento.addEventListener("mouseenter", () => {
+    if (window.innerWidth <= 600) {
+      elemento.style.margin = "0 16px"
+    } else {
+      elemento.style.margin = "0 40px"
+    }
     elemento.style.scale = "1.5"
-    elemento.style.margin = "0 40px"
     elemento.style.color = getRandomColor()
     elemento.style.transition = "all 0.5s"
     elemento.style.rotate = "45deg"
@@ -75,5 +77,10 @@ elementos.forEach((elemento) => {
 
 //Para resetear el margin del sufijo cada vez que salga el mouse
 ampm.addEventListener("mouseleave", () => {
-  ampm.style.marginLeft = "30px"
+
+  if (window.innerWidth <= 600) {
+    ampm.style.marginLeft = "8px"
+  } else {
+    ampm.style.marginLeft = "30px"
+  }
 })
