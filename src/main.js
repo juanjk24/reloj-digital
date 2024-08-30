@@ -70,7 +70,7 @@ elementos.forEach((elemento) => {
   elemento.addEventListener("mouseleave", () => {
     elemento.style.scale = "1"
     elemento.style.margin = "0"
-    elemento.style.color = "black"
+    elemento.style.color = "#f1f1f1"
     elemento.style.rotate = "360deg"
   })
 })
