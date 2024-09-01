@@ -2,6 +2,8 @@ const horas = document.getElementById("horas")
 const minutos = document.getElementById("minutos")
 const segundos = document.getElementById("segundos")
 const ampm = document.getElementById("ampm")
+const darkmodeButton = document.getElementById("darkmode-btn")
+const darkmodeIcon = document.getElementById("darkmode-icon")
 
 const actualizarHora = () => {
   const fecha = new Date()
@@ -39,6 +41,7 @@ const actualizarHora = () => {
 //llamar a la funcin actualizar la hora cada segundo
 setInterval(actualizarHora, 1000)
 
+// Cambiar el color de los elementos al pasar el mouse
 function getRandomColor() {
   let letras = "0123456789"
   let char = "#"
@@ -49,6 +52,7 @@ function getRandomColor() {
 
   return char
 }
+
 
 const elementos = [horas, minutos, segundos, ampm]
 
@@ -68,9 +72,15 @@ elementos.forEach((elemento) => {
 
 elementos.forEach((elemento) => {
   elemento.addEventListener("mouseleave", () => {
+
+    if (document.body.classList.contains("dark")) {
+      elemento.style.color = "#f1f1f1"
+    }else{
+      elemento.style.color = "#222"
+    }
+
     elemento.style.scale = "1"
     elemento.style.margin = "0"
-    elemento.style.color = "#f1f1f1"
     elemento.style.rotate = "360deg"
   })
 })
@@ -82,5 +92,25 @@ ampm.addEventListener("mouseleave", () => {
     ampm.style.marginLeft = "8px"
   } else {
     ampm.style.marginLeft = "30px"
+  }
+})
+
+// cambiar el fondo de la pagina (dark mode)
+let darkmode = false
+
+darkmodeButton.addEventListener("click", () => {
+  darkmode = !darkmode
+  if (darkmode) {
+    document.body.classList.add("dark")
+    document.body.classList.remove("light")
+    darkmodeButton.classList.add("dark")
+    darkmodeButton.classList.remove("light")
+    darkmodeIcon.setAttribute("src", "/light.svg")
+  } else {
+    document.body.classList.add("light")
+    document.body.classList.remove("dark") 
+    darkmodeButton.classList.add("light")
+    darkmodeButton.classList.remove("dark")
+    darkmodeIcon.setAttribute("src", "/moon.svg")
   }
 })
