@@ -95,21 +95,28 @@ ampm.addEventListener("mouseleave", () => {
   }
 })
 
-// cambiar el fondo de la pagina (dark mode)
+// DARK MODE
 let darkmode = false
 
 darkmodeButton.addEventListener("click", () => {
   darkmode = !darkmode
+
   if (darkmode) {
+    elementos.forEach((elemento) => {
+      elemento.style.color = "#f1f1f1"
+    })
     document.body.classList.add("dark")
-    document.body.classList.remove("light")
     darkmodeButton.classList.add("dark")
+    document.body.classList.remove("light")
     darkmodeButton.classList.remove("light")
     darkmodeIcon.setAttribute("src", "/light.svg")
   } else {
+    elementos.forEach((elemento) => {
+      elemento.style.color = "#222"
+    })
     document.body.classList.add("light")
-    document.body.classList.remove("dark") 
     darkmodeButton.classList.add("light")
+    document.body.classList.remove("dark") 
     darkmodeButton.classList.remove("dark")
     darkmodeIcon.setAttribute("src", "/moon.svg")
   }
