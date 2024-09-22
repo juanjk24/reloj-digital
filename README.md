@@ -3,4 +3,4 @@
 Demo: [https://reloj-online-interactivo.vercel.app/](https://reloj-digital-interactivo.vercel.app/)
 
 
-![shot-reloj](https://github.com/user-attachments/assets/eaab3e89-decb-461b-8a4c-c2f00525b58f)
+![334shots_so](https://github.com/user-attachments/assets/e30a458f-0026-4b9d-8dff-7210ceb778fd)
